@@ -19,7 +19,8 @@ class DummyClass extends Controller
 	 */
 	public function index()
 	{
-		${{crudNamePlural}} = {{crudNameCap}}::latest()->get();
+		//${{crudNamePlural}} = {{crudNameCap}}::latest->get();
+		${{crudNamePlural}} = {{crudNameCap}}::orderBy('id', 'desc')->get();
 		return view('{{viewPath}}{{crudName}}.index', compact('{{crudNamePlural}}'));
 	}
 
